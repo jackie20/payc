@@ -1,0 +1,34 @@
+﻿@model IEnumerable<payc.Models.TaxCalculation>
+
+<h2>Tax Calculations</h2>
+
+<table class="table">
+
+    <a class="btn btn-success" asp-area="" asp-controller="TaxCalculations" asp-action="Create">Add Income </a>
+    <thead>
+        <tr>
+            <th>Postal Code</th>
+            <th>Annual Income</th>
+            <th>Tax Amount</th>
+            <th>Calculation Date</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.PostalCode</td>
+                <td>@item.AnnualIncome</td>
+                <td>@item.TaxAmount</td>
+                <td>@item.CalculationDate</td>
+                <td>
+                    <!--
+                    <a asp-action="EditIncome" asp-route-id="@item.Id" class="btn btn-primary">Edit</a>
+                    <a asp-action="DeleteIncome" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                    -->
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

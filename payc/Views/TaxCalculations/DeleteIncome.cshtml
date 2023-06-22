@@ -1,0 +1,16 @@
+﻿@model payc.Models.TaxCalculation
+
+<h2>Delete Tax Calculation</h2>
+
+<div>
+    <h4>Are you sure you want to delete this record?</h4>
+    <h5>Postal Code: @Model.PostalCode</h5>
+    <h5>Annual Income: @Model.AnnualIncome</h5>
+    <h5>Tax Amount: @Model.TaxAmount</h5>
+    <h5>Calculation Date: @Model.CalculationDate</h5>
+    <form asp-action="DeleteConfirmed" method="post">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-danger">Delete</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
